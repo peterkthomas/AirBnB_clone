@@ -19,3 +19,7 @@ class BaseModel(object):
         """String representation of self"""
         name = self.__class__.__name__
         return '[{}] ({}) {}'.format(name, self.id, self.__dict__)
+
+    def save(self):
+        """saves with the current date time"""
+        self.updated_at = datetime.today()
