@@ -11,11 +11,11 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb)"
 
-    def do_quit(self, line):
+    def do_quit(self, arg):
         """Exits the program"""
         sys.exit()
 
-    def do_EOF(self, line):
+    def do_EOF(self, arg):
         """Catches EOF keyboard entry"""
         print()
         return True
