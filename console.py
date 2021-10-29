@@ -4,7 +4,7 @@
 """
 import cmd
 import sys
-
+import models
 
 class HBNBCommand(cmd.Cmd):
     """HBNB Console Class"""
