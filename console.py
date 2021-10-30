@@ -23,6 +23,43 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """Makes it so an empty line doesn't do anything"""
         print("", end="")
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    def do_all(self,arg):
+        new_arg = args.split()
+        class_list =
+        {
+                "BaseModel": BaseModel
+        }
+        if new_arg[0] not in self.class_list:
+            print("*** class doesn't exist ***")
+
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':
