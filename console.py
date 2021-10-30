@@ -5,6 +5,7 @@
 import cmd
 import sys
 import models
+from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
