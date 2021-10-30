@@ -23,8 +23,7 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """Makes it so an empty line doesn't do anything"""
         print("", end="")
-    
-    
+
 
 
 
