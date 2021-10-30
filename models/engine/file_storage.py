@@ -31,7 +31,8 @@ class FileStorage(object):
                 from models.base_model import BaseModel
                 nd = json.loads(fd.read())
                 for key, value in nd.items():
-                    o = BaseModel(**value)
+                    name = value.get("__class__")
+                    o = eval(name + "(**value)")
                     FileStorage.__objects[key] = o
 
         except IOError:
