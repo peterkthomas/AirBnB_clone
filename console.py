@@ -31,19 +31,27 @@ class HBNBCommand(cmd.Cmd):
 
 
 
+    def do_destroy(self, arg):
+        new_arg = arg.split()
+        if len(new_arg) == 0:
+            print("** class name missing**")
+        elif new_arg[0] not in class_list:
+            print("** class doesn't exist **")
+        elif len(new_arg) < 2:
+            print("** instance id missing **")
+
+        class_id = new_arg[0] + '.' + new_arg[1]
+
+        elif class_id  not in models.storage.all:
+            print("** no instance found **")
+
+        else:
+        models.storage.all.pop(class_id)
+        models.storage.save()
 
 
 
-
-
-
-
-
-
-
-
-
-    def do_all(self,arg):
+    def do_all(self, arg):
         new_arg = args.split()
         class_list =
         {
