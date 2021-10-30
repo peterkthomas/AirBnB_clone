@@ -63,7 +63,8 @@ class TestBaseModel_to_dict(unittest.TestCase):
         today = datetime.today()
         base = BaseModel()
         base.id = "43435"
-        base.created_at = base.updated_at = today
+        base.created_at = today
+        base.updated_at = today
         a = {
             'id': '43435',
             '__class__': 'BaseModel',
