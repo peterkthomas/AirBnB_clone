@@ -6,10 +6,14 @@ import cmd
 import sys
 import models
 
+
 class HBNBCommand(cmd.Cmd):
     """HBNB Console Class"""
 
     prompt = "(hbnb)"
+    class_list = {
+        "BaseModel": BaseModel
+    }
 
     def do_quit(self, arg):
         """Exits the program"""
@@ -24,49 +28,27 @@ class HBNBCommand(cmd.Cmd):
         """Makes it so an empty line doesn't do anything"""
         print("", end="")
 
-
-
-
-
-
-
-
     def do_destroy(self, arg):
         new_arg = arg.split()
+        class_id = new_arg[0] + '.' + new_arg[1]
         if len(new_arg) == 0:
             print("** class name missing**")
-        elif new_arg[0] not in class_list:
+        elif new_arg[0] not in self.class_list:
             print("** class doesn't exist **")
         elif len(new_arg) < 2:
             print("** instance id missing **")
 
-        class_id = new_arg[0] + '.' + new_arg[1]
-
-        elif class_id  not in models.storage.all:
+        elif class_id not in models.storage.all:
             print("** no instance found **")
 
         else:
-        models.storage.all.pop(class_id)
-        models.storage.save()
-
-
+            models.storage.all.pop(class_id)
+            models.storage.save()
 
     def do_all(self, arg):
-        new_arg = args.split()
-        class_list =
-        {
-                "BaseModel": BaseModel
-        }
+        new_arg = arg.split()
         if new_arg[0] not in self.class_list:
             print("*** class doesn't exist ***")
-
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
