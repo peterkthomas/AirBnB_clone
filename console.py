@@ -6,6 +6,12 @@ import cmd
 import sys
 import models
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.review import Review
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
 
 
 class HBNBCommand(cmd.Cmd):
@@ -13,7 +19,8 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb)"
     class_list = {
-        "BaseModel": BaseModel
+        "BaseModel": BaseModel, "UserModel": User, "State": State,
+        "Review": Review, "City": City, "Amenity": Amenity, "Place": Place
     }
 
     def do_quit(self, arg):
@@ -37,7 +44,7 @@ class HBNBCommand(cmd.Cmd):
         elif new_arg[0] not in self.class_list:
             print("** class doesn't exist **")
         else:
-            new model = self.class_list[new_arg[0]]()
+            new_model = self.class_list[new_arg[0]]()
             new_model.save()
             print(new_model.id)
 
@@ -64,6 +71,7 @@ class HBNBCommand(cmd.Cmd):
             print("*** class doesn't exist ***")
         for n in models.storage.all():
             print(n)
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
