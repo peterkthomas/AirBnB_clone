@@ -37,7 +37,7 @@ class TestBaseModel_creation(unittest.TestCase):
 
 
 class TestBaseModel_save(unittest.TestCase):
-    """Unittests for testing save method of the BaseModel class."""
+    """Testing save for BaseModel class"""
 
     def test_save_none(self):
         base = BaseModel()
@@ -53,7 +53,7 @@ class TestBaseModel_save(unittest.TestCase):
 
 
 class TestBaseModel_to_dict(unittest.TestCase):
-    """Unittests for testing to_dict method of the BaseModel class."""
+    """Testing to_dict in BaseModel class"""
 
     def test_type(self):
         base = BaseModel()
