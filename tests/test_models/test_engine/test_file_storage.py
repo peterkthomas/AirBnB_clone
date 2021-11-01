@@ -4,7 +4,6 @@
 """
 import unittest
 import json
-import models
 from models.engine.file_storage import FileStorage
 
 
@@ -12,7 +11,7 @@ class TestFileStorage(unittest.TestCase):
     """File Storage Test"""
 
     def test_all(self):
-        o = models.storage.all()
+        o = self.storage.all()
         self.assertIsNotNone(o)
         self.assertEqual(type(o), dict)
         self.assertIs(o, self.storage._FileStorage__objects)
