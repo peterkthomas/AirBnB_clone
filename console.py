@@ -55,14 +55,14 @@ class HBNBCommand(cmd.Cmd):
         if len(new_arg) >= 2:
             class_id = new_arg[0] + '.' + new_arg[1]
         if not arg:
-            print("** class name missing **")
+           return print("** class name missing **")
         elif len(new_arg) == 1:
-            print("** instance id missing **")
+           return print("** instance id missing **")
         elif new_arg[0] not in self.class_list:
-            print("** class doesn't exist **")
+           return print("** class doesn't exist **")
         try:
-            models.storage.all()[class_id]
-            models.storage.save()
+            x = models.storage.all()[class_id]
+            print(x)
         except Exception:
             return print("** no instance found **")
 
