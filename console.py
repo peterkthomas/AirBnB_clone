@@ -51,7 +51,7 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, arg):
         new_arg = arg.split()
         class_id = new_arg[0] + '.' + new_arg[1]
-        if len(new_arg) == 0:
+        if not arg:
             return print("** class name missing **")
         elif new_arg[0] not in self.class_list:
             return print("** class doesn't exist **")
