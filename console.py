@@ -99,10 +99,11 @@ class HBNBCommand(cmd.Cmd):
                 print("*** class doesn't exist ***")
             else:
                 for n in models.storage.all():
-                    print(n)
+                    if new_arg[0] in n:
+                        print(models.storage.all()[n])
         else:
             for n in models.storage.all():
-                print(n)
+                print(models.storage.all()[n])
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
