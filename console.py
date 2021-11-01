@@ -55,11 +55,11 @@ class HBNBCommand(cmd.Cmd):
         if len(new_arg) >= 2:
             class_id = new_arg[0] + '.' + new_arg[1]
         if not arg:
-           return print("** class name missing **")
+            return print("** class name missing **")
         elif len(new_arg) == 1:
-           return print("** instance id missing **")
+            return print("** instance id missing **")
         elif new_arg[0] not in self.class_list:
-           return print("** class doesn't exist **")
+            return print("** class doesn't exist **")
         try:
             x = models.storage.all()[class_id]
             print(x)
@@ -91,7 +91,6 @@ class HBNBCommand(cmd.Cmd):
         except Exception:
             return print("** no instance found **")
 
-
     def do_all(self, arg):
         new_arg = arg.split()
         if len(new_arg) >= 1:
@@ -104,6 +103,28 @@ class HBNBCommand(cmd.Cmd):
         else:
             for n in models.storage.all():
                 print(models.storage.all()[n])
+
+    def do_update(self, arg):
+        new_arg = arg.split()
+        class_id = ''
+        if len(new_arg) >= 2:
+            class_id = new_arg[0] + '.' + new_arg[1]
+        if not arg:
+            return print("** class name missing **")
+        elif new_arg[0] not in self.class_list:
+            return print("** class doesn't exist **")
+        elif len(new_arg) < 2:
+            return print("** instance id missing **")
+        elif len(new_arg) < 3:
+            return print("** attribute name missing **")
+        elif len(new_arg) < 4:
+            return print("** value missing **")
+        try:
+            setattr(models.storage.all()[class_id],
+                    new_arg[2], new_arg[3])
+            models.storage.save()
+        except Exception:
+            return print("** no instance found **")
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
