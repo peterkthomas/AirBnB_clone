@@ -61,7 +61,7 @@ class HBNBCommand(cmd.Cmd):
         elif new_arg[0] not in self.class_list:
             print("** class doesn't exist **")
         try:
-            models.storage.all(class_id)
+            models.storage.all()[class_id]
             models.storage.save()
         except Exception:
             return print("** no instance found **")
