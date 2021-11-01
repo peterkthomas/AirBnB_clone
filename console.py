@@ -67,12 +67,15 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         new_arg = arg.split()
-        if new_arg[0] not in self.class_list:
-            print("*** class doesn't exist ***")
+        if len(new_arg) >= 1:
+            if new_arg[0] not in self.class_list:
+                print("*** class doesn't exist ***")
+            else:
+                for n in models.storage.all():
+                    print(n)
         else:
             for n in models.storage.all():
                 print(n)
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
