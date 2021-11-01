@@ -4,7 +4,6 @@
 """
 import unittest
 import json
-from models.engine.file_storage import FileStorage
 
 
 class TestFileStorage(unittest.TestCase):
