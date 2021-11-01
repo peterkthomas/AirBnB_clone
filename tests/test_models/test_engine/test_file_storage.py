@@ -9,18 +9,6 @@ import json
 class TestFileStorage(unittest.TestCase):
     """File Storage Test"""
 
-    def test_all(self):
-        o = self.storage.all()
-        self.assertIsNotNone(o)
-        self.assertEqual(type(o), dict)
-        self.assertIs(o, self.storage._FileStorage__objects)
-
-    def test_storage_empty(self):
-        self.assertIsNotNone(self.storage.all())
-
-    def test_storage_all(self):
-        self.assertEqual(dict, type(self.storage.all()))
-
     def test_json_load(self):
         with open("file.json") as fd:
             d = json.load(fd)
