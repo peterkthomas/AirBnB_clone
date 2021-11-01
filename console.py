@@ -58,12 +58,19 @@ class HBNBCommand(cmd.Cmd):
         elif len(new_arg) < 2:
             return print("** instance id missing **")
 
-        elif class_id not in models.storage.all:
-            return print("** no instance found **")
+        """ elif class_id not in models.storage.all:
+           return print("** no instance found **")
 
-        else:
+         else:
             models.storage.all.delete(class_id)
             models.storage.save()
+        """
+        try:
+            models.storage.all.delete(class_id)
+            models.storage.save()
+        except Exception:
+            return print("** no instance found **")
+
 
     def do_all(self, arg):
         new_arg = arg.split()
