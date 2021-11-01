@@ -68,7 +68,7 @@ class HBNBCommand(cmd.Cmd):
             models.storage.save()
         """
         try:
-            models.storage.all.delete(class_id)
+            models.storage.all().delete(class_id)
             models.storage.save()
         except Exception:
             return print("** no instance found **")
