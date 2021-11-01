@@ -10,5 +10,4 @@ class TestState(unittest.TestCase):
     """State testing class"""
 
     def test_blank(self):
-        x = State()
-        self.assertIsInstance(x.name, str)
+        pass
