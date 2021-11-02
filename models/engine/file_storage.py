@@ -28,7 +28,6 @@ class FileStorage(object):
     def reload(self):
         try:
             with open(self.__file_path, mode='r', encoding='utf-8') as fd:
-                from models.base_model import BaseModel
                 nd = json.loads(fd.read())
                 for key, value in nd.items():
                     name = value.get("__class__")
