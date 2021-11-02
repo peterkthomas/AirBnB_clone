@@ -3,7 +3,6 @@
     File: file_storage.py
 """
 import json
-import models
 
 
 class FileStorage(object):
@@ -29,10 +28,12 @@ class FileStorage(object):
     def reload(self):
         try:
             with open(self.__file_path, mode='r', encoding='utf-8') as fd:
-                nd = json.load(fd)
-                for key in nd:
-                    self.__objects[key] = getattr(
-                        models, nd[key]['__class__'])(
-                        **nd[key])
-        except Exception:
+                from models.base_model import BaseModel
+                nd = json.loads(fd.read())
+                for key, value in nd.items():
+                    name = value.get("__class__")
+                    o = eval(name + "(**value)")
+                    FileStorage.__objects[key] = o
+
+        except IOError:
             pass
