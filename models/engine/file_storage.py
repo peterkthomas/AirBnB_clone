@@ -3,6 +3,13 @@
     File: file_storage.py
 """
 import json
+from models.amenity import Amenity
+from models.base_model import BaseModel
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+from models.user import User
 
 
 class FileStorage(object):
@@ -10,6 +17,10 @@ class FileStorage(object):
 
     __file_path = "file.json"
     __objects = {}
+    class_list = {
+        "BaseModel": BaseModel, "User": User, "State": State,
+        "Review": Review, "City": City, "Amenity": Amenity, "Place": Place
+    }
 
     def all(self):
         return FileStorage.__objects
@@ -27,12 +38,10 @@ class FileStorage(object):
 
     def reload(self):
         try:
-            with open(self.__file_path, mode='r', encoding='utf-8') as fd:
-                nd = json.loads(fd.read())
-                for key, value in nd.items():
-                    name = value.get("__class__")
-                    o = eval(name + "(**value)")
-                    FileStorage.__objects[key] = o
-
-        except IOError:
+            with open(self.__file_path, mode='r') as fd:
+                nd = json.load(fd)
+            for key in nd:
+                self.__objects[key] = self.class_list[nd[key]
+                                                      ["__class__"]](**nd[key])
+        except BaseException:
             pass
