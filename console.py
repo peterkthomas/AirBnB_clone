@@ -113,7 +113,7 @@ class HBNBCommand(cmd.Cmd):
             return print("** value missing **")
         try:
             setattr(models.storage.all()[class_id],
-                    new_arg[2], new_arg[3])
+                    new_arg[2], new_arg[3].strip('"'))
             models.storage.save()
         except Exception:
             return print("** no instance found **")
