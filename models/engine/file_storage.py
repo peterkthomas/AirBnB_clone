@@ -23,7 +23,7 @@ class FileStorage(object):
         x = {}
         with open(self.__file_path, mode='w') as fd:
             for key, value in FileStorage.__objects.items():
-                x[key] = value.to_dict()
+                x.update({key: value.to_dict()})
             fd.write(json.dumps(x))
 
     def reload(self):
