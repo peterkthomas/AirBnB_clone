@@ -27,11 +27,13 @@ class FileStorage(object):
 
     def reload(self):
         try:
-            with open(FileStorage.__file_path) as fd:
-                nd = json.load(fd)
-                for item in nd.values():
-                    name = item["__class__"]
-                    del item["__class__"]
-                    self.new(eval(name)(**item))
-        except FileNotFoundError:
+            with open(self.__file_path, mode='r', encoding='utf-8') as fd:
+                from models.base_model import BaseModel
+                nd = json.loads(fd.read())
+                for key, value in nd.items():
+                    name = value.get("__class__")
+                    o = eval(name + "(**value)")
+                    FileStorage.__objects[key] = o
+
+        except IOError:
             pass
