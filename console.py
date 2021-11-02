@@ -77,16 +77,8 @@ class HBNBCommand(cmd.Cmd):
             return print("** class doesn't exist **")
         elif len(new_arg) < 2:
             return print("** instance id missing **")
-
-        """ elif class_id not in models.storage.all:
-           return print("** no instance found **")
-
-         else:
-            models.storage.all.delete(class_id)
-            models.storage.save()
-        """
         try:
-            models.storage.all().delete(class_id)
+            models.storage.all().pop(class_id)
             models.storage.save()
         except Exception:
             return print("** no instance found **")
@@ -125,6 +117,7 @@ class HBNBCommand(cmd.Cmd):
             models.storage.save()
         except Exception:
             return print("** no instance found **")
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
