@@ -91,10 +91,10 @@ class HBNBCommand(cmd.Cmd):
             else:
                 for n in models.storage.all():
                     if new_arg[0] in n:
-                        print(models.storage.all()[n])
+                        print([str(models.storage.all()[n])])
         else:
             for n in models.storage.all():
-                print(models.storage.all()[n])
+                print([str(models.storage.all()[n])])
 
     def do_update(self, arg):
         new_arg = arg.split()
