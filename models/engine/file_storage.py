@@ -29,7 +29,7 @@ class FileStorage(object):
     def reload(self):
         try:
             with open(self.__file_path, mode='r') as fd:
-                nd = json.load(fd)
+                nd = json.loads(fd)
                 for key in nd:
                     self.__objects[key] = getattr(
                         models, nd[key]['__class__'])(
