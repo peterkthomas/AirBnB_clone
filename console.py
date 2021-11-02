@@ -87,7 +87,7 @@ class HBNBCommand(cmd.Cmd):
         new_arg = arg.split()
         if len(new_arg) >= 1:
             if new_arg[0] not in self.class_list:
-                print("*** class doesn't exist ***")
+                print("** class doesn't exist **")
             else:
                 for n in models.storage.all():
                     if new_arg[0] in n:
