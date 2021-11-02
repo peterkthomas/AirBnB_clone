@@ -21,14 +21,14 @@ class FileStorage(object):
 
     def save(self):
         x = {}
-        with open(self.__file_path, mode='w', encoding='utf-8') as fd:
+        with open(self.__file_path, mode='w') as fd:
             for key, value in FileStorage.__objects.items():
                 x.update({key: value.to_dict()})
             fd.write(json.dumps(x))
 
     def reload(self):
         try:
-            with open(self.__file_path, mode='r', encoding='utf-8') as fd:
+            with open(self.__file_path, mode='r') as fd:
                 nd = json.load(fd)
                 for key in nd:
                     self.__objects[key] = getattr(
