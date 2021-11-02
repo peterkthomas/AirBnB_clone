@@ -19,7 +19,7 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb)"
     class_list = {
-        "BaseModel": BaseModel, "UserModel": User, "State": State,
+        "BaseModel": BaseModel, "User": User, "State": State,
         "Review": Review, "City": City, "Amenity": Amenity, "Place": Place
     }
 
@@ -113,7 +113,7 @@ class HBNBCommand(cmd.Cmd):
             return print("** value missing **")
         try:
             setattr(models.storage.all()[class_id],
-                    new_arg[2], new_arg[3].strip('"'))
+                    new_arg[2], new_arg[3])
             models.storage.save()
         except Exception:
             return print("** no instance found **")
