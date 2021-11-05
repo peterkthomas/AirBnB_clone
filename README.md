@@ -2,7 +2,7 @@
 
 Description:
 
-###Use and Install Clone repository and follow along with information below.
+##Use and Install Clone repository and follow along with information below.
 Interactive mode:
 $ ./console.py
 (hbnb) help
