@@ -67,6 +67,7 @@ class HBNBCommand(cmd.Cmd):
             return print("** no instance found **")
 
     def do_destroy(self, arg):
+        """Removes a class instance from the objects dictionary (and saves it)"""
         new_arg = arg.split()
         class_id = ''
         if len(new_arg) >= 2:
@@ -84,6 +85,10 @@ class HBNBCommand(cmd.Cmd):
             return print("** no instance found **")
 
     def do_all(self, arg):
+        """
+        Prints all instances of a class if the class name is present,
+        Otherwise prints all class instances for all class names
+        """
         new_arg = arg.split()
         if len(new_arg) >= 1:
             if new_arg[0] not in self.class_list:
@@ -97,6 +102,7 @@ class HBNBCommand(cmd.Cmd):
                 print(models.storage.all()[n])
 
     def do_update(self, arg):
+        """Adds or updates a class attribute with a specified value"""
         new_arg = arg.split()
         class_id = ''
         if len(new_arg) >= 2:
