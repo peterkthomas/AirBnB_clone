@@ -25,3 +25,5 @@ Example 2: ./console.py
 (hbnb) create BaseModel
 
 ## How it Works
+
+Creators: Darwin Delgado, Peter Thomas, and Patrick Welton
