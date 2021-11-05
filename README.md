@@ -2,7 +2,8 @@
 
 Description:
 
-### Use and Install: Clone repository and follow along with information below.
+### Use and Install: 
+Clone repository and follow along with information below.
 
 ## How to Use Command Interpreter
 Builtins:
