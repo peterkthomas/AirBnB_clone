@@ -25,5 +25,9 @@ Example 2: ./console.py
 (hbnb) create BaseModel
 
 ## How it Works
+Clone, go to folder, then run ./console.py with command. Add specific command. 
+
+Files included: console.py Command interpreter entry point
+__init__.py, file_storage.py, amenity.py, base_model.py, city.py, place.py, review.py, state.py, user.py,test_amenity.py, test_base_model.py, test_city.py, test_place.py, test_review.py, test_state.py, test_user.py, AUTHORS, README.md.
 
 Creators: Darwin Delgado, Peter Thomas, and Patrick Welton
