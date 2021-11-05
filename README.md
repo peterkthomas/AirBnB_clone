@@ -1,6 +1,6 @@
 # AirBNB Clone Wars
 
-Description:
+Description: This is the first step towards building the full AirBnB web application. This command interpreter is the foundation for HTML/CSS templating, database storage, API, front-end integration that is to come.
 
 ### Use and Install: 
 Clone repository and follow along with information below.
@@ -18,8 +18,10 @@ Builtins:
 | all | Prints all instances of a class if the class name is present, otherwise prints prints all class instances for all class names |
 | update | Adds or updates a class attribute with a specified file | 
 
-Example 1:
+Example 1: ./console.py 
+(hbnb) show BaseModel
 
-Example 2:
+Example 2: ./console.py
+(hbnb) create BaseModel
 
 ## How it Works
