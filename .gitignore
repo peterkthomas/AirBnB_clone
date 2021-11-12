@@ -2,3 +2,4 @@
 *.pyc
 test_base_model_dict.py
 file.json
+.DS_Store
