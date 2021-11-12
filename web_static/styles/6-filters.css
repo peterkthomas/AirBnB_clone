@@ -23,7 +23,7 @@ h3 {
     padding: 0;
 }
 
-.title-amenities .popover .ul-popover li:first-child {
+.amenities .popover .ul-popover li:first-child {
     list-style-type: none;
     display: inline-block;
     margin: 0;
@@ -36,7 +36,7 @@ h3 {
     display: flex;
 }
 
-.title-amenities .popover .ul-popover h4 {
+.amenities .popover .ul-popover h4 {
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -47,7 +47,7 @@ h3 {
     justify-content: start;
 }
 
- .title-locations .popover .ul-popover h4 {
+ .locations .popover .ul-popover h4 {
     margin: 0;
     padding: 0;
     margin-bottom: 8px;
@@ -97,7 +97,7 @@ button:hover {
     opacity: 0.9;
 }
 
-.title-locations{
+.locations{
     width:25%;
     height:100%;
     float: left;
@@ -106,7 +106,7 @@ button:hover {
     box-sizing: border-box;
 }
 
-.title-amenities{
+.amenities{
     width:25%;
     height:100%;
     float: left;
@@ -122,7 +122,7 @@ button:hover {
     box-sizing: content-box;
 }
 
-.title-locations:hover .popover {
+.locations:hover .popover {
     display: block;
     margin: 0;
     padding: 0;
@@ -130,7 +130,7 @@ button:hover {
     height:270px;
 }
 
-.title-amenities:hover .popover {
+.amenities:hover .popover {
     display: block;
     margin: 0;
     padding: 0;

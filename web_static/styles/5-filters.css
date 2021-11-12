@@ -45,7 +45,7 @@ button:hover {
     opacity: 0.9;
 }
 
-.title-locations{
+.locations{
     width:25%;
     height:100%;
     float: left;
@@ -54,7 +54,7 @@ button:hover {
     box-sizing: border-box;
 }
 
-.title-amenities{
+.amenities{
     width:25%;
     height:100%;
     float: left;
